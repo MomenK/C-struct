@@ -1,3 +1,4 @@
+// Online C++ compiler to run C++ program online
 #include <iostream>  
 using namespace std;  
 class Animal {  
@@ -20,7 +21,11 @@ int main(void) {
     p[0] = new Animal();
     p[1] = new Man();
     p[0]->function();
+    
     p[1]->function();
+    // to access parent method
+    p[1]->Animal::function();
+    
     // Below works without virtual function
 //  Animal A =
 //   A.function();   //parent class object 
