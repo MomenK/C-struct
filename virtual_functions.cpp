@@ -1,36 +1,35 @@
-// Online C++ compiler to run C++ program online
-#include <iostream>  
-using namespace std;  
-class Animal {  
-    public:  
-   virtual void function(){    
-cout<<"Eating..."<<endl;    
-    }      
-};   
-class Man: public Animal    
-{    
- public:  
- void function()    
-    {    
-       cout<<"Walking ..."<<endl;    
-    }    
-};  
-int main(void) {  
+// Online C compiler to run C program online
+#include <stdio.h>
+
+// pass by reference in C;
+
+void add (int* a){
+	 *(a) = *(a)+5;
+}
+
+// Does not work in C!!, inly i C++
+// int add2 (int& a){
+// 	return a = a+5;
+// }
+
+int main() {
+    // Write C code here
+    int x  = 0;
+    int *y = malloc(1*sizeof(int));
     
-    Animal *p[2];
-    p[0] = new Animal();
-    p[1] = new Man();
-    p[0]->function();
+    *y = 0;
     
-    p[1]->function();
-    // to access parent method
-    p[1]->Animal::function();
+    add(&x);
+    // printf("%d\n",add(&x));
+    printf("x = %d\n",x);
     
-    // Below works without virtual function
-//  Animal A =
-//   A.function();   //parent class object 
-// //   Man m = Man();    
-//   m.function();   // child class object
-   
-   return 0;  
+// Does not work in C!!, inly i C++ 
+    // printf("%d\n",add2(x);
+    // printf("%d\n",x);
+    
+    add(y);
+    // printf("%d\n",add(y));
+    printf("y = %d\n",*(y));
+    
+    return 0;
 }
